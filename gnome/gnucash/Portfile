@@ -47,7 +47,6 @@ patchfiles-append patch-CMakeLists.txt.diff
 post-patch {
     reinplace "s|set(HAVE_OSX_KEYCHAIN 1)||" ${worksrcpath}/CMakeLists.txt
     reinplace "s|-Werror||" ${worksrcpath}/CMakeLists.txt
-    reinplace "s|if (WIN32 OR APPLE)|if (WIN32)|" ${worksrcpath}/CMakeLists.txt
 
     reinplace "s|@@PYTHON_PKGD@@|${frameworks_dir}/Python.framework/Versions/${py_ver}/lib/python${py_ver}/site-packages|" ${worksrcpath}/CMakeLists.txt
 
